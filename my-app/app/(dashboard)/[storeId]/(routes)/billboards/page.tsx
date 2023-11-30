@@ -13,7 +13,7 @@ const BillBoardsPage = async ({ params }: { params: { storeId: string } }) => {
     label: item.label,
     createdAt: format(item.createdAt, "MMMM do, yyyy"),
   }));
-  console.log(formatedBillboards);
+  
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 pt-6 p-8">

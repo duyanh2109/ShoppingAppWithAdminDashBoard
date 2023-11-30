@@ -35,12 +35,12 @@ model Category {
   id String @id @default(uuid())
   storeId String
   store Store @relation("StoreToCategory", fields: [storeId],references: [id])
-  billBoardId String
-  billboard Billboard @relation("BillboardToCategory", fields: [billBoardId],references: [id])
+  billboardId String
+  billboard Billboard @relation("BillboardToCategory", fields: [billboardId],references: [id])
   name String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([storeId])
-  @@index([billBoardId])
+  @@index([billboardId])
 }
