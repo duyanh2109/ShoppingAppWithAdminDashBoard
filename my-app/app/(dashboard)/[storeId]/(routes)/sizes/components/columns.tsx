@@ -6,23 +6,28 @@ import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import Cellaction from "./cell-action";
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type BillboardColumn = {
+export type SizeColumn = {
   id: string;
-  label: string;
+  name: string;
+  value: string;
   createdAt: string;
 };
 
-export const columns: ColumnDef<BillboardColumn>[] = [
+export const columns: ColumnDef<SizeColumn>[] = [
   {
-    accessorKey: "label",
-    header: "label",
+    accessorKey: "name",
+    header: "Name",
+  },
+  {
+    accessorKey: "value",
+    header: "Value",
   },
   {
     accessorKey: "createdAt",
     header: "Date",
   },
   {
-    accessorKey: "action",header: "Action",
+    accessorKey: "action",header:"Action",
     cell: ({ row }) => <Cellaction data={row.original} />,
   },
 ];
