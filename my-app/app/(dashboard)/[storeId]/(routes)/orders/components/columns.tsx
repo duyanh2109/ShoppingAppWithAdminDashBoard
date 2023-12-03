@@ -1,9 +1,7 @@
 "use client";
 
-import { Button } from "@/components/UI/button";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
-import Cellaction from "./cell-action";
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 export type OrderColumn = {
