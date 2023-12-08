@@ -26,6 +26,7 @@ export async function POST(
     where: { id: { in: productIds } },
   });
   const line_items: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
+
   products.forEach((product) => {
     line_items.push({
       quantity: 1,
@@ -64,6 +65,6 @@ export async function POST(
       orderId: order.id,
     },
   });
-  console.log(session)
+  console.log(session);
   return NextResponse.json({ url: session.url }, { headers: corsHeaders });
 }
