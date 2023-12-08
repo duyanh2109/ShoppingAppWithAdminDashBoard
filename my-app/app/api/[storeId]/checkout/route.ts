@@ -64,5 +64,6 @@ export async function POST(
       orderId: order.id,
     },
   });
+  console.log(session)
   return NextResponse.json({ url: session.url }, { headers: corsHeaders });
 }
