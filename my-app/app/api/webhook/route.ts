@@ -5,11 +5,12 @@ import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import prismadb from "@/lib/prisma-db";
 import getRawBody from "raw-body";
-import { config } from "process";
+
 export async function POST(req: any) {
   const rawBody = await getRawBody(req);
   const signature = headers().get("stripe-signature") as string;
-
+  console.log(rawBody);
+  console.log(signature);
   let event: Stripe.Event;
 
   try {
@@ -67,4 +68,3 @@ export async function POST(req: any) {
 
   return new NextResponse(null, { status: 200 });
 }
-
