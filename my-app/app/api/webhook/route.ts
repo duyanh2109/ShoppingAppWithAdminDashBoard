@@ -5,11 +5,7 @@ import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import prismadb from "@/lib/prisma-db";
 import { buffer } from "micro";
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+
 export async function POST(req: any) {
   const rawBody = await buffer(req);
   const signature = headers().get("stripe-signature") as string;
