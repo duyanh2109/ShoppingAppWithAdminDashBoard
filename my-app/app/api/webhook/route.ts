@@ -7,7 +7,7 @@ import prismadb from "@/lib/prisma-db";
 import getRawBody from "raw-body";
 
 export async function POST(req: any) {
-  const rawBody = await getRawBody(req);
+  const rawBody = await getRawBody(req.body);
   const signature = headers().get("stripe-signature") as string;
   console.log(rawBody);
   console.log(signature);
