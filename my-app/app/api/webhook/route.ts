@@ -6,8 +6,8 @@ import { stripe } from "@/lib/stripe";
 import prismadb from "@/lib/prisma-db";
 import { buffer } from "micro";
 
-export async function POST(req: any) {
-  const rawBody = await buffer(req);
+export async function POST(req: Request) {
+  const rawBody = await req.json();
   const signature = headers().get("stripe-signature") as string;
 
   let event: Stripe.Event;
